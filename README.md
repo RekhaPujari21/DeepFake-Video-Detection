@@ -9,13 +9,13 @@ This project is focused on detecting **DeepFake videos** using a Deep Learning p
 The dataset should be organized as follows:
 
 - dataset/
- - ├── train_sample_videos/
- - │ ├── [video1].mp4
- - │ ├── [video2].mp4
- - │ └── metadata.json
- - └── test_videos/
- - ├── [test_video1].mp4
- - └── ...
+   - ├── train_sample_videos/
+      - │ ├── [video1].mp4
+      - │ ├── [video2].mp4
+      - │ └── metadata.json
+   - └── test_videos/
+      - ├── [test_video1].mp4
+      - └── ...
 
 
 - `metadata.json`: Includes the label (`REAL` or `FAKE`) for each training video.
