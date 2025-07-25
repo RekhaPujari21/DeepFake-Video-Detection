@@ -27,55 +27,55 @@ dataset/
 Install required packages using pip:
 
 
-pip install tensorflow
-pip install opencv-contrib-python
-pip install imageio
-pip install matplotlib
-pip install pandas
+- pip install tensorflow
+- pip install opencv-contrib-python
+- pip install imageio
+- pip install matplotlib
+- pip install pandas
 ------------------------------------------------------------------------------------------
-⚙️ How It Works
+## ⚙️ How It Works
 1. 📹 Video Frame Extraction
-Extracts 20 frames from each video using OpenCV.
+- Extracts 20 frames from each video using OpenCV.
 
-Frames are center-cropped and resized to 224x224 pixels.
+- Frames are center-cropped and resized to 224x224 pixels.
 
-RGB normalized for consistency.
+- RGB normalized for consistency.
 
 2. 🔍 Feature Extraction
-Uses a pretrained InceptionV3 model (without top layer).
+- Uses a pretrained InceptionV3 model (without top layer).
 
-Converts each frame into a 2048-dimensional feature vector.
+- Converts each frame into a 2048-dimensional feature vector.
 
 3. ⏩ Sequence Modeling
-Sequence of features passed into:
+- Sequence of features passed into:
 
-GRU(16) → GRU(8)
+- GRU(16) → GRU(8)
 
-Followed by a Dropout and Dense layers
+- Followed by a Dropout and Dense layers
 
-Final layer is a sigmoid activation that outputs:
+- Final layer is a sigmoid activation that outputs:
 
-FAKE if score ≥ 0.5
+  - FAKE if score ≥ 0.5
 
-REAL if score < 0.5
+  - REAL if score < 0.5
 
 4. Training
-Binary classification using binary_crossentropy.
+- Binary classification using binary_crossentropy.
 
-Optimizer: Adam
+- Optimizer: Adam
 
-Uses ModelCheckpoint to save the best model based on accuracy.
+- Uses ModelCheckpoint to save the best model based on accuracy.
 ---------------------------------------------------------------------------------
-📊 Visualizations
+## 📊 Visualizations
 ✅ Label Distribution (REAL vs FAKE) using Matplotlib bar chart.
 
 🖼️ Frame preview and processing shown using matplotlib.pyplot.
 
 🎞️ Inline video display using IPython HTML (for notebooks).
 --------------------------------------------------------------------------------
-🚀 Inference Example
-After training the model, you can predict any test video like this:
-
+## 🚀 Inference Example
+- After training the model, you can predict any test video like this:
+''' bash 
 if sequence_prediction('bwbp1.mp4') >= 0.5:
     print("Predicted: FAKE")
 else:
