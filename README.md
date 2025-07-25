@@ -1,4 +1,4 @@
-# 🤖 DeepFake Video Detection using TensorFlow & InceptionV3
+# 🤖 DeepFake Video Detection 
 
 This project is focused on detecting **DeepFake videos** using a Deep Learning pipeline that combines **InceptionV3** for feature extraction and **GRU (Gated Recurrent Units)** for temporal sequence modeling. It identifies whether a given video is **REAL** or **FAKE** based on facial movements and inconsistencies.
 
