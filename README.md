@@ -74,12 +74,11 @@ Install required packages using pip:
 🎞️ Inline video display using IPython HTML (for notebooks).
 --------------------------------------------------------------------------------
 ## 🚀 Inference Example
-- After training the model, you can predict any test video like this:
-''' bash 
-if sequence_prediction('bwbp1.mp4') >= 0.5:
-    print("Predicted: FAKE")
-else:
-    print("Predicted: REAL")
+- After training the model, you can predict any test video like this: 
+- if sequence_prediction('bwbp1.mp4') >= 0.5:
+    - print("Predicted: FAKE")
+- else:
+    - print("Predicted: REAL")
 ----------------------------------------------------------------------------------
 
 
